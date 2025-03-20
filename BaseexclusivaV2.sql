@@ -14,58 +14,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-DELIMITER //
-CREATE PROCEDURE `AlterTableMail`()
-BEGIN
-    DECLARE table_exists INT DEFAULT 0;
-    DECLARE adress_exists INT DEFAULT 0;
-    DECLARE adressbook_exists INT DEFAULT 0;
-    DECLARE identifier_exists INT DEFAULT 0;
-
-    -- Check if the table exists
-    SELECT COUNT(*) INTO table_exists
-    FROM information_schema.TABLES
-    WHERE TABLE_NAME = 'mail';
-    
-    -- If table exists, check if columns exist
-    IF table_exists = 1 THEN
-        SELECT COUNT(*) INTO adress_exists
-        FROM information_schema.COLUMNS
-        WHERE TABLE_NAME = 'mail' AND COLUMN_NAME = 'adress';
-
-        SELECT COUNT(*) INTO adressbook_exists
-        FROM information_schema.COLUMNS
-        WHERE TABLE_NAME = 'mail' AND COLUMN_NAME = 'adressbook';
-
-        SELECT COUNT(*) INTO identifier_exists
-        FROM information_schema.COLUMNS
-        WHERE TABLE_NAME = 'mail' AND COLUMN_NAME = 'identifier';
-
-        -- Conditional altering
-        IF adress_exists = 1 THEN
-            SET @sql = 'ALTER TABLE mail CHANGE `adress` `address` int(11) NOT NULL AUTO_INCREMENT;';
-            PREPARE stmt FROM @sql;
-            EXECUTE stmt;
-            DEALLOCATE PREPARE stmt;
-        END IF;
-
-        IF adressbook_exists = 1 THEN
-            SET @sql = 'ALTER TABLE mail DROP COLUMN adressbook;';
-            PREPARE stmt FROM @sql;
-            EXECUTE stmt;
-            DEALLOCATE PREPARE stmt;
-        END IF;
-
-        IF identifier_exists = 1 THEN
-            SET @sql = 'ALTER TABLE mail DROP COLUMN identifier;';
-            PREPARE stmt FROM @sql;
-            EXECUTE stmt;
-            DEALLOCATE PREPARE stmt;
-        END IF;
-    END IF;
-END//
-DELIMITER ;
-
 -- Copiando estrutura para tabela baseexclusivav2.bank_users
 CREATE TABLE IF NOT EXISTS `bank_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
