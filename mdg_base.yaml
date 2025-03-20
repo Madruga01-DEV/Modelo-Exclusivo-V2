@@ -167,12 +167,6 @@ tasks:
     ref: main
     dest: ./resources/logo_loadscreen
 
-        # Download lockpick
-  - action: download_github
-    src: https://github.com/Madruga01-DEV/Dependencias
-    ref: main
-    dest: ./resources/Dependencias
-
 # Remove Old Chat
   - action: remove_path
     path: ./resources/[cfx-default]/[gameplay]/chat
