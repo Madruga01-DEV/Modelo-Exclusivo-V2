@@ -1,5 +1,5 @@
 
-CREATE TABLE IF NOT EXISTS `bank_users` (
+CREATE TABLE `bank_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `identifier` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `bank_users` (
   CONSTRAINT `bankusers` FOREIGN KEY (`identifier`) REFERENCES `users` (`identifier`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE IF NOT EXISTS `banneds` (
+CREATE TABLE `banneds` (
   `b_id` int(11) NOT NULL AUTO_INCREMENT,
   `b_steam` varchar(100) NOT NULL,
   `b_license` varchar(255) DEFAULT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `banneds` (
   PRIMARY KEY (`b_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
-CREATE TABLE IF NOT EXISTS `bills` (
+CREATE TABLE `bills` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `job` longtext DEFAULT NULL,
   `playername` longtext DEFAULT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `bills` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `birds` (
+CREATE TABLE `birds` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(60) NOT NULL,
   `charid` int(5) NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `birds` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE IF NOT EXISTS `boats` (
+CREATE TABLE `boats` (
   `identifier` varchar(50) NOT NULL,
   `charid` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `boats` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `bounty` (
+CREATE TABLE `bounty` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` longtext DEFAULT '',
   `identifier` varchar(50) DEFAULT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `bounty` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `bountyboard` (
+CREATE TABLE `bountyboard` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` longtext DEFAULT '',
   `bounty` int(11) DEFAULT NULL,
@@ -78,14 +78,14 @@ CREATE TABLE IF NOT EXISTS `bountyboard` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `bulgar_madamnazar_market` (
+CREATE TABLE `bulgar_madamnazar_market` (
   `charid` int(11) DEFAULT NULL,
   `identifier` varchar(100) NOT NULL,
   `bulgar_madamnazar_market` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-CREATE TABLE IF NOT EXISTS `camping` (
+CREATE TABLE `camping` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `center` longtext DEFAULT '{}',
   `identifier` varchar(255) NOT NULL DEFAULT '0',
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `camping` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `cartaz` (
+CREATE TABLE `cartaz` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
   `poster_link` varchar(255) DEFAULT NULL,
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `cartaz` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `characters` (
+CREATE TABLE `characters` (
   `identifier` varchar(50) NOT NULL DEFAULT '',
   `steamname` varchar(50) NOT NULL DEFAULT '',
   `charidentifier` int(11) NOT NULL AUTO_INCREMENT,
@@ -171,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `characters` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
 
 
-CREATE TABLE IF NOT EXISTS `character_inventories` (
+CREATE TABLE `character_inventories` (
   `character_id` int(11) DEFAULT NULL,
   `inventory_type` varchar(100) NOT NULL DEFAULT 'default',
   `item_crafted_id` int(11) NOT NULL,
@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `character_inventories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `clothes_bought` (
+CREATE TABLE `clothes_bought` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(100) NOT NULL,
   `charid` int(11) NOT NULL,
@@ -200,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `clothes_bought` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `communityservice` (
+CREATE TABLE `communityservice` (
   `identifier` varchar(100) NOT NULL DEFAULT '0',
   `name` varchar(100) NOT NULL DEFAULT '0',
   `characterid` varchar(5) NOT NULL DEFAULT '0',
@@ -209,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `communityservice` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=DYNAMIC;
 
 
-CREATE TABLE IF NOT EXISTS `companions` (
+CREATE TABLE `companions` (
   `identifier` varchar(40) NOT NULL,
   `charidentifier` int(11) NOT NULL DEFAULT 0,
   `dog` varchar(255) NOT NULL,
@@ -218,7 +218,7 @@ CREATE TABLE IF NOT EXISTS `companions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `container` (
+CREATE TABLE `container` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` longtext DEFAULT NULL,
   `items` longtext NOT NULL DEFAULT '{}',
@@ -316,14 +316,14 @@ INSERT IGNORE INTO `container` (`id`, `name`, `items`, `invslots`) VALUES
 	(85, 'aaaaa', '{}', 0);
 
 
-CREATE TABLE IF NOT EXISTS `craft` (
+CREATE TABLE `craft` (
   `identifier` varchar(500) NOT NULL,
   `charidentifier` varchar(50) NOT NULL,
   `profession` longtext NOT NULL DEFAULT '{}'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `diseases` (
+CREATE TABLE `diseases` (
   `charid` int(11) NOT NULL,
   `diseases` longtext DEFAULT '{}',
   PRIMARY KEY (`charid`),
@@ -331,7 +331,7 @@ CREATE TABLE IF NOT EXISTS `diseases` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `doors` (
+CREATE TABLE `doors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `doorinfo` longtext NOT NULL DEFAULT '[]',
   `job` longtext NOT NULL DEFAULT '[]',
@@ -342,7 +342,7 @@ CREATE TABLE IF NOT EXISTS `doors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `farming` (
+CREATE TABLE `farming` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `steam` varchar(500) NOT NULL,
   `charid` varchar(255) DEFAULT NULL,
@@ -353,7 +353,7 @@ CREATE TABLE IF NOT EXISTS `farming` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE IF NOT EXISTS `farmingdata` (
+CREATE TABLE `farmingdata` (
   `job` varchar(255) DEFAULT NULL,
   `blipSprite` varchar(255) DEFAULT NULL,
   `coords` longtext DEFAULT '{}',
@@ -362,7 +362,7 @@ CREATE TABLE IF NOT EXISTS `farmingdata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `farmingdatafree` (
+CREATE TABLE `farmingdatafree` (
   `blipSprite` varchar(255) DEFAULT NULL,
   `coords` longtext DEFAULT '{}',
   `count` int(11) DEFAULT NULL,
@@ -370,7 +370,7 @@ CREATE TABLE IF NOT EXISTS `farmingdatafree` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `herbalists` (
+CREATE TABLE `herbalists` (
   `identifier` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `charidentifier` int(11) NOT NULL,
   `location` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
@@ -379,7 +379,7 @@ CREATE TABLE IF NOT EXISTS `herbalists` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 
-CREATE TABLE IF NOT EXISTS `horses` (
+CREATE TABLE `horses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(40) NOT NULL,
   `charid` int(11) NOT NULL,
@@ -410,7 +410,7 @@ CREATE TABLE IF NOT EXISTS `horses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `horsesstore` (
+CREATE TABLE `horsesstore` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `model` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -432,7 +432,7 @@ CREATE TABLE IF NOT EXISTS `horsesstore` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `horsestrainers` (
+CREATE TABLE `horsestrainers` (
   `steam` varchar(600) DEFAULT NULL,
   `charidentifier` varchar(255) DEFAULT NULL,
   `job` varchar(255) DEFAULT NULL,
@@ -440,7 +440,7 @@ CREATE TABLE IF NOT EXISTS `horsestrainers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `horses_breeding` (
+CREATE TABLE `horses_breeding` (
   `identifier` varchar(255) NOT NULL,
   `charid` varchar(255) NOT NULL,
   `reward_model` varchar(255) DEFAULT '0',
@@ -458,7 +458,7 @@ CREATE TABLE IF NOT EXISTS `horses_breeding` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `horse_complements` (
+CREATE TABLE `horse_complements` (
   `identifier` varchar(50) NOT NULL,
   `charidentifier` int(11) NOT NULL,
   `complements` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
@@ -466,7 +466,7 @@ CREATE TABLE IF NOT EXISTS `horse_complements` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 
-CREATE TABLE IF NOT EXISTS `hospital` (
+CREATE TABLE `hospital` (
   `hospital` varchar(50) NOT NULL,
   PRIMARY KEY (`hospital`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -476,7 +476,7 @@ INSERT IGNORE INTO `hospital` (`hospital`) VALUES
 	('Saint Denis Hospital');
 
 
-CREATE TABLE IF NOT EXISTS `hospital_notes` (
+CREATE TABLE `hospital_notes` (
   `note_id` int(11) NOT NULL AUTO_INCREMENT,
   `hospital` varchar(50) NOT NULL DEFAULT '',
   `written_by` int(11) NOT NULL DEFAULT 0,
@@ -489,7 +489,7 @@ CREATE TABLE IF NOT EXISTS `hospital_notes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `housing` (
+CREATE TABLE `housing` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) DEFAULT NULL,
   `charidentifier` int(11) NOT NULL,
@@ -500,7 +500,7 @@ CREATE TABLE IF NOT EXISTS `housing` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 
-CREATE TABLE IF NOT EXISTS `injured` (
+CREATE TABLE `injured` (
   `identifier` varchar(50) NOT NULL DEFAULT '',
   `charidentifier` int(11) DEFAULT NULL,
   `injured` varchar(50) DEFAULT '0',
@@ -508,7 +508,7 @@ CREATE TABLE IF NOT EXISTS `injured` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 
-CREATE TABLE IF NOT EXISTS `items` (
+CREATE TABLE `items` (
   `item` varchar(50) NOT NULL,
   `label` varchar(50) NOT NULL,
   `limit` int(11) NOT NULL DEFAULT 1,
@@ -2305,7 +2305,7 @@ INSERT IGNORE INTO `items` (`item`, `label`, `limit`, `can_remove`, `type`, `usa
 	('Yarrow_Seed', 'semente de milefólio', 100, 1, 'item_standard', 1, 337, 1, '{}', 'Seeds to grow Yarrow plants.', 0.25),
 	('yuccaleaf', 'Yucca Leaf', 50, 1, 'item_standard', 1, 17689, 1, '{}', 'an item', 0.25);
 
-CREATE TABLE IF NOT EXISTS `items_crafted` (
+CREATE TABLE `items_crafted` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `character_id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
@@ -2318,7 +2318,7 @@ CREATE TABLE IF NOT EXISTS `items_crafted` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `item_group` (
+CREATE TABLE `item_group` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL COMMENT 'Description of Item Group',
   PRIMARY KEY (`id`)
@@ -2329,7 +2329,7 @@ INSERT IGNORE INTO `item_group` (`id`, `description`) VALUES
 	(1, 'default');
 
 
-CREATE TABLE IF NOT EXISTS `jail` (
+CREATE TABLE `jail` (
   `identifier` varchar(100) NOT NULL DEFAULT '0',
   `name` varchar(100) NOT NULL DEFAULT '0',
   `characterid` varchar(5) NOT NULL DEFAULT '0',
@@ -2339,7 +2339,7 @@ CREATE TABLE IF NOT EXISTS `jail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=DYNAMIC;
 
 
-CREATE TABLE IF NOT EXISTS `jaildata` (
+CREATE TABLE `jaildata` (
   `identifier` varchar(600) NOT NULL DEFAULT '0',
   `charid` varchar(100) NOT NULL DEFAULT '0',
   `name` varchar(500) DEFAULT '',
@@ -2350,7 +2350,7 @@ CREATE TABLE IF NOT EXISTS `jaildata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `jailwork` (
+CREATE TABLE `jailwork` (
   `identifier` varchar(600) NOT NULL DEFAULT '0',
   `charid` varchar(100) NOT NULL DEFAULT '0',
   `city` varchar(500) DEFAULT '',
@@ -2359,7 +2359,7 @@ CREATE TABLE IF NOT EXISTS `jailwork` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `loadout` (
+CREATE TABLE `loadout` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `charidentifier` int(11) DEFAULT NULL,
@@ -2384,7 +2384,7 @@ CREATE TABLE IF NOT EXISTS `loadout` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mail` (
+CREATE TABLE `mail` (
   `address` int(11) NOT NULL AUTO_INCREMENT,
   `charidentifier` int(11) DEFAULT NULL,
   PRIMARY KEY (`address`)
@@ -2400,7 +2400,7 @@ INSERT IGNORE INTO `mail` (`address`, `charidentifier`) VALUES
 	(6, 6),
 	(7, 7);
 
-CREATE TABLE IF NOT EXISTS `mailboxes` (
+CREATE TABLE `mailboxes` (
   `char_identifier` varchar(255) DEFAULT NULL,
   `mailbox_id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(255) DEFAULT NULL,
@@ -2409,7 +2409,7 @@ CREATE TABLE IF NOT EXISTS `mailboxes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mailbox_mails` (
+CREATE TABLE `mailbox_mails` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sender_id` varchar(50) DEFAULT NULL,
   `sender_firstname` varchar(50) DEFAULT NULL,
@@ -2424,7 +2424,7 @@ CREATE TABLE IF NOT EXISTS `mailbox_mails` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mailbox_messages` (
+CREATE TABLE `mailbox_messages` (
   `from_char` varchar(255) DEFAULT NULL,
   `to_char` varchar(255) DEFAULT NULL,
   `message` text DEFAULT NULL,
@@ -2437,7 +2437,7 @@ CREATE TABLE IF NOT EXISTS `mailbox_messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mails` (
+CREATE TABLE `mails` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `anon` tinyint(1) DEFAULT NULL,
   `read` tinyint(1) DEFAULT NULL,
@@ -2455,7 +2455,7 @@ CREATE TABLE IF NOT EXISTS `mails` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mail_addressbook` (
+CREATE TABLE `mail_addressbook` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `address` int(11) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
@@ -2467,7 +2467,7 @@ CREATE TABLE IF NOT EXISTS `mail_addressbook` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mail_editablefolders` (
+CREATE TABLE `mail_editablefolders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `address` int(11) DEFAULT NULL,
   `folderName` varchar(255) DEFAULT NULL,
@@ -2477,7 +2477,7 @@ CREATE TABLE IF NOT EXISTS `mail_editablefolders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mdg_bank` (
+CREATE TABLE `mdg_bank` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `identifier` varchar(50) NOT NULL,
@@ -2491,7 +2491,7 @@ CREATE TABLE IF NOT EXISTS `mdg_bank` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mdg_clothes_state` (
+CREATE TABLE `mdg_clothes_state` (
   `identifier` varchar(50) NOT NULL,
   `charid` int(11) NOT NULL,
   `category` varchar(20) NOT NULL,
@@ -2500,7 +2500,7 @@ CREATE TABLE IF NOT EXISTS `mdg_clothes_state` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mdg_farming` (
+CREATE TABLE `mdg_farming` (
   `plant_id` int(40) NOT NULL AUTO_INCREMENT,
   `plant_coords` longtext NOT NULL,
   `plant_type` varchar(40) NOT NULL,
@@ -2512,7 +2512,7 @@ CREATE TABLE IF NOT EXISTS `mdg_farming` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mdg_horses` (
+CREATE TABLE `mdg_horses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) NOT NULL,
   `charid` int(11) NOT NULL,
@@ -2532,7 +2532,7 @@ CREATE TABLE IF NOT EXISTS `mdg_horses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mdg_horses_stats` (
+CREATE TABLE `mdg_horses_stats` (
   `horseid` int(11) NOT NULL,
   `distance` int(11) NOT NULL DEFAULT 0,
   `lastNewShoes` int(11) NOT NULL DEFAULT 0,
@@ -2546,21 +2546,21 @@ CREATE TABLE IF NOT EXISTS `mdg_horses_stats` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mdg_ident` (
+CREATE TABLE `mdg_ident` (
   `steam` varchar(255) DEFAULT NULL,
   `charid` varchar(50) DEFAULT NULL,
   `data` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mdg_madame_nazar` (
+CREATE TABLE `mdg_madame_nazar` (
   `charid` int(11) DEFAULT NULL,
   `identifier` varchar(100) DEFAULT NULL,
   `mdg_madame_nazar` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mdg_outfits` (
+CREATE TABLE `mdg_outfits` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(100) NOT NULL,
   `charid` int(11) NOT NULL,
@@ -2571,7 +2571,7 @@ CREATE TABLE IF NOT EXISTS `mdg_outfits` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mdg_stable_bought` (
+CREATE TABLE `mdg_stable_bought` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) NOT NULL,
   `charid` int(11) NOT NULL,
@@ -2583,7 +2583,7 @@ CREATE TABLE IF NOT EXISTS `mdg_stable_bought` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mdg_stable_color` (
+CREATE TABLE `mdg_stable_color` (
   `id` int(11) NOT NULL,
   `drawable` int(11) DEFAULT NULL,
   `albedo` int(11) DEFAULT NULL,
@@ -2597,7 +2597,7 @@ CREATE TABLE IF NOT EXISTS `mdg_stable_color` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mdg_vip` (
+CREATE TABLE `mdg_vip` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` text DEFAULT NULL,
   `charid` int(11) DEFAULT NULL,
@@ -2608,7 +2608,7 @@ CREATE TABLE IF NOT EXISTS `mdg_vip` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mdg_wagons` (
+CREATE TABLE `mdg_wagons` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) NOT NULL,
   `charid` int(11) NOT NULL,
@@ -2625,7 +2625,7 @@ CREATE TABLE IF NOT EXISTS `mdg_wagons` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `mms_huntingid` (
+CREATE TABLE `mms_huntingid` (
   `identifier` varchar(50) DEFAULT NULL,
   `firstname` varchar(50) DEFAULT NULL,
   `lastname` varchar(50) DEFAULT NULL,
@@ -2636,7 +2636,7 @@ CREATE TABLE IF NOT EXISTS `mms_huntingid` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `moonshiner` (
+CREATE TABLE `moonshiner` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `object` text NOT NULL DEFAULT '',
   `xpos` float NOT NULL,
@@ -2647,7 +2647,7 @@ CREATE TABLE IF NOT EXISTS `moonshiner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `moonshiner_plants` (
+CREATE TABLE `moonshiner_plants` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `object` text NOT NULL DEFAULT '',
   `xpos` float NOT NULL,
@@ -2658,12 +2658,12 @@ CREATE TABLE IF NOT EXISTS `moonshiner_plants` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `newspaper` (
+CREATE TABLE `newspaper` (
   `news` longtext DEFAULT '[]'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `notepad` (
+CREATE TABLE `notepad` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `charidentifier` int(11) NOT NULL,
   `message` varchar(50) DEFAULT NULL,
@@ -2672,7 +2672,7 @@ CREATE TABLE IF NOT EXISTS `notepad` (
 ) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 
-CREATE TABLE IF NOT EXISTS `oil` (
+CREATE TABLE `oil` (
   `identifier` varchar(50) NOT NULL,
   `charidentifier` int(11) NOT NULL,
   `manager_trust` int(100) NOT NULL DEFAULT 0,
@@ -2683,7 +2683,7 @@ CREATE TABLE IF NOT EXISTS `oil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `outfits` (
+CREATE TABLE `outfits` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(45) NOT NULL,
   `charidentifier` int(11) DEFAULT NULL,
@@ -2693,14 +2693,14 @@ CREATE TABLE IF NOT EXISTS `outfits` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 
-CREATE TABLE IF NOT EXISTS `outfitter` (
+CREATE TABLE `outfitter` (
   `identifier` varchar(50) DEFAULT NULL,
   `charidentifier` int(11) DEFAULT NULL,
   `props` longtext DEFAULT '[]'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `pets` (
+CREATE TABLE `pets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(500) DEFAULT NULL,
   `charid` int(11) DEFAULT 0,
@@ -2713,7 +2713,7 @@ CREATE TABLE IF NOT EXISTS `pets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 
-CREATE TABLE IF NOT EXISTS `playerfarms` (
+CREATE TABLE `playerfarms` (
   `charid` int(11) NOT NULL,
   `farm` longtext NOT NULL DEFAULT '[]',
   PRIMARY KEY (`charid`)
@@ -2725,7 +2725,7 @@ INSERT IGNORE INTO `playerfarms` (`charid`, `farm`) VALUES
 	(2, '1');
 
 
-CREATE TABLE IF NOT EXISTS `playerfarmsdex` (
+CREATE TABLE `playerfarmsdex` (
   `dex` longtext DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -2736,7 +2736,7 @@ INSERT IGNORE INTO `playerfarmsdex` (`dex`) VALUES
 	('0');
 
 
-CREATE TABLE IF NOT EXISTS `playerhousing` (
+CREATE TABLE `playerhousing` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` int(11) NOT NULL DEFAULT 0,
   `primarydoor` longtext NOT NULL DEFAULT '[]',
@@ -2875,7 +2875,7 @@ INSERT IGNORE INTO `playerhousing` (`id`, `type`, `primarydoor`, `otherdoors`, `
 	(177, 0, '[{"objYaw1":0.00235201278701,"q":46.62643814086914,"p":-141.64300537109376,"objYaw3":-139.03125,"entit":1194242,"o":2237.07470703125,"objYaw2":0.00180673645809,"objc":1762076266,"doorname":"p_door41x","locked":true,"x":2237.07470703125,"y":-141.64300537109376,"doorhash":-2080420985,"z":46.62643814086914}]', '[]', 100, 0, 'steam:11000013527d62e', 22, 0, 0, 0, 500, 0, '[]', '[]', '[]', '[{"name":"trigo","group":1,"metadata":[],"label":"trigo","type":"item_standard","count":1,"limit":100}]', '[]', 1000, '0', 0, '0', 0);
 
 
-CREATE TABLE IF NOT EXISTS `playerhousing_sold_home_ledger` (
+CREATE TABLE `playerhousing_sold_home_ledger` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) DEFAULT NULL,
   `charidentifier` int(11) DEFAULT NULL,
@@ -2884,7 +2884,7 @@ CREATE TABLE IF NOT EXISTS `playerhousing_sold_home_ledger` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `playershops` (
+CREATE TABLE `playershops` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) NOT NULL DEFAULT '0',
   `charidentifier` int(11) NOT NULL DEFAULT 0,
@@ -2908,7 +2908,7 @@ CREATE TABLE IF NOT EXISTS `playershops` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `player_ranch` (
+CREATE TABLE `player_ranch` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) DEFAULT NULL,
   `charidentifier` int(11) DEFAULT NULL,
@@ -2991,7 +2991,7 @@ INSERT IGNORE INTO `player_ranch` (`id`, `identifier`, `charidentifier`, `name`,
 	(55, NULL, NULL, 'Fazenda 53', 150000, '{"x":203.3406524658203,"y":985.8958740234375,"z":190.27862548828126}', 0, '[]', '[]', '[]', NULL, '[]', '[]', '[]', 0, 0, 0, '0', 0, 0, 0, 0, 0, 0, 1000, '[]'),
 	(57, NULL, NULL, 'Fazenda 54', 100000, '{"x":793.2129516601563,"y":872.043212890625,"z":119.51619720458985}', 0, '[]', '[]', '[]', NULL, '[]', '[]', '[]', 0, 0, 0, '0', 0, 0, 0, 0, 0, 0, 450, '[]');
 
-CREATE TABLE IF NOT EXISTS `player_trains` (
+CREATE TABLE `player_trains` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL DEFAULT '0',
   `contid` int(11) DEFAULT NULL,
@@ -3009,7 +3009,7 @@ CREATE TABLE IF NOT EXISTS `player_trains` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `player_transformations` (
+CREATE TABLE `player_transformations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) NOT NULL,
   `charid` int(11) NOT NULL,
@@ -3019,7 +3019,7 @@ CREATE TABLE IF NOT EXISTS `player_transformations` (
 ) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `posters` (
+CREATE TABLE `posters` (
   `poster_link` varchar(255) DEFAULT NULL,
   `city` varchar(255) DEFAULT '',
   `date` datetime DEFAULT NULL ON UPDATE current_timestamp(),
@@ -3028,7 +3028,7 @@ CREATE TABLE IF NOT EXISTS `posters` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `ranch` (
+CREATE TABLE `ranch` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `steam` varchar(100) DEFAULT NULL,
   `charid` int(11) DEFAULT NULL,
@@ -3050,7 +3050,7 @@ CREATE TABLE IF NOT EXISTS `ranch` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=DYNAMIC;
 
 
-CREATE TABLE IF NOT EXISTS `real_logic_horses` (
+CREATE TABLE `real_logic_horses` (
   `update_time` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -3059,7 +3059,7 @@ INSERT IGNORE INTO `real_logic_horses` (`update_time`) VALUES
 	(0);
 
 
-CREATE TABLE IF NOT EXISTS `real_logic_pets` (
+CREATE TABLE `real_logic_pets` (
   `update_time` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -3068,7 +3068,7 @@ INSERT IGNORE INTO `real_logic_pets` (`update_time`) VALUES
 	(66);
 
 
-CREATE TABLE IF NOT EXISTS `real_logic_ranch` (
+CREATE TABLE `real_logic_ranch` (
   `update_time` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -3077,7 +3077,7 @@ INSERT IGNORE INTO `real_logic_ranch` (`update_time`) VALUES
 	(0);
 
 
-CREATE TABLE IF NOT EXISTS `ricx_waterpumps` (
+CREATE TABLE `ricx_waterpumps` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `id2` int(10) NOT NULL,
   `identifier` varchar(60) NOT NULL,
@@ -3088,13 +3088,13 @@ CREATE TABLE IF NOT EXISTS `ricx_waterpumps` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `robbery` (
+CREATE TABLE `robbery` (
   `name_robbery` varchar(50) DEFAULT '0',
   `time_robbery` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `rooms` (
+CREATE TABLE `rooms` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `interiorId` int(11) NOT NULL,
   `inventory` longtext DEFAULT NULL,
@@ -3104,7 +3104,7 @@ CREATE TABLE IF NOT EXISTS `rooms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 
-CREATE TABLE IF NOT EXISTS `societa` (
+CREATE TABLE `societa` (
   `id` int(1) NOT NULL AUTO_INCREMENT,
   `nomesocieta` longtext NOT NULL,
   `soldi` int(11) NOT NULL DEFAULT 0,
@@ -3122,7 +3122,7 @@ CREATE TABLE IF NOT EXISTS `societa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `society` (
+CREATE TABLE `society` (
   `job` longtext DEFAULT NULL,
   `jobgrade` int(11) DEFAULT NULL,
   `salary` int(11) NOT NULL DEFAULT 0
@@ -3153,7 +3153,7 @@ INSERT IGNORE INTO `society` (`job`, `jobgrade`, `salary`) VALUES
 	('horsetrainer', 4, 0);
 
 
-CREATE TABLE IF NOT EXISTS `society_ledger` (
+CREATE TABLE `society_ledger` (
   `job` longtext DEFAULT NULL,
   `ledger` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -3248,7 +3248,7 @@ INSERT IGNORE INTO `society_ledger` (`job`, `ledger`) VALUES
 	('police', 0);
 
 
-CREATE TABLE IF NOT EXISTS `society_shops` (
+CREATE TABLE `society_shops` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `society` varchar(50) NOT NULL DEFAULT '0',
   `items` longtext NOT NULL DEFAULT '[]',
@@ -3260,7 +3260,7 @@ CREATE TABLE IF NOT EXISTS `society_shops` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `stables` (
+CREATE TABLE `stables` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) NOT NULL,
   `charidentifier` int(11) NOT NULL,
@@ -3277,7 +3277,7 @@ CREATE TABLE IF NOT EXISTS `stables` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 
-CREATE TABLE IF NOT EXISTS `stagecoaches` (
+CREATE TABLE `stagecoaches` (
   `identifier` varchar(40) NOT NULL,
   `charid` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -3285,7 +3285,7 @@ CREATE TABLE IF NOT EXISTS `stagecoaches` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `storelimits` (
+CREATE TABLE `storelimits` (
   `store` varchar(255) DEFAULT NULL,
   `count` varchar(255) DEFAULT NULL,
   `item` varchar(255) DEFAULT NULL,
@@ -3293,7 +3293,7 @@ CREATE TABLE IF NOT EXISTS `storelimits` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `stores` (
+CREATE TABLE `stores` (
   `city_name` varchar(50) DEFAULT NULL,
   `tax_for_price` varchar(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -3311,7 +3311,7 @@ INSERT IGNORE INTO `stores` (`city_name`, `tax_for_price`) VALUES
 	('Valentine_Store', '100'),
 	('Sell_Ecology_Spot', '100');
 
-CREATE TABLE IF NOT EXISTS `storesplayer` (
+CREATE TABLE `storesplayer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `identifier` varchar(100) NOT NULL,
@@ -3326,7 +3326,7 @@ CREATE TABLE IF NOT EXISTS `storesplayer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `telegrams` (
+CREATE TABLE `telegrams` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `recipient` varchar(255) NOT NULL,
   `sender` varchar(255) NOT NULL,
@@ -3339,7 +3339,7 @@ CREATE TABLE IF NOT EXISTS `telegrams` (
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 
-CREATE TABLE IF NOT EXISTS `undead` (
+CREATE TABLE `undead` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -3348,7 +3348,7 @@ CREATE TABLE IF NOT EXISTS `undead` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `underground` (
+CREATE TABLE `underground` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) DEFAULT NULL,
   `charidentifier` int(11) DEFAULT NULL,
@@ -3377,7 +3377,7 @@ CREATE TABLE IF NOT EXISTS `underground` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `underground_animals` (
+CREATE TABLE `underground_animals` (
   `ranchid` int(11) NOT NULL,
   `animalid` int(11) NOT NULL,
   `animaltype` varchar(255) NOT NULL,
@@ -3398,7 +3398,7 @@ CREATE TABLE IF NOT EXISTS `underground_animals` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 
-CREATE TABLE IF NOT EXISTS `underground_employees` (
+CREATE TABLE `underground_employees` (
   `ranchid` int(11) NOT NULL,
   `position` varchar(255) NOT NULL,
   `steamid` varchar(255) NOT NULL,
@@ -3409,7 +3409,7 @@ CREATE TABLE IF NOT EXISTS `underground_employees` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 
-CREATE TABLE IF NOT EXISTS `underground_objects` (
+CREATE TABLE `underground_objects` (
   `ranchid` int(11) NOT NULL,
   `x` int(11) NOT NULL,
   `y` int(11) NOT NULL,
@@ -3427,7 +3427,7 @@ CREATE TABLE IF NOT EXISTS `underground_objects` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 
-CREATE TABLE IF NOT EXISTS `underground_ranches` (
+CREATE TABLE `underground_ranches` (
   `ranchid` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `ownercharid` int(11) NOT NULL,
@@ -3436,7 +3436,7 @@ CREATE TABLE IF NOT EXISTS `underground_ranches` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE `users` (
   `identifier` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `group` varchar(50) DEFAULT 'user',
   `warnings` int(11) DEFAULT 0,
@@ -3448,7 +3448,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `user_jobs` (
+CREATE TABLE `user_jobs` (
   `user_id` int(11) NOT NULL,
   `job` varchar(50) DEFAULT NULL,
   `job_grade` int(11) DEFAULT NULL,
@@ -3458,7 +3458,7 @@ CREATE TABLE IF NOT EXISTS `user_jobs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `wagons` (
+CREATE TABLE `wagons` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(40) NOT NULL,
   `charid` int(11) NOT NULL,
@@ -3489,7 +3489,7 @@ CREATE TABLE IF NOT EXISTS `wagons` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS `wagon_water` (
+CREATE TABLE `wagon_water` (
   `identifier` varchar(255) DEFAULT '0',
   `charid` varchar(255) DEFAULT '0',
   `wagon` varchar(255) DEFAULT '0',
@@ -3498,7 +3498,7 @@ CREATE TABLE IF NOT EXISTS `wagon_water` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
 
 
-CREATE TABLE IF NOT EXISTS `whitelist` (
+CREATE TABLE `whitelist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `status` tinyint(1) DEFAULT NULL,
@@ -3509,7 +3509,7 @@ CREATE TABLE IF NOT EXISTS `whitelist` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 
-CREATE TABLE IF NOT EXISTS `xxx_dogs` (
+CREATE TABLE `xxx_dogs` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `id2` int(6) NOT NULL DEFAULT 0,
   `identifier` varchar(70) NOT NULL,
