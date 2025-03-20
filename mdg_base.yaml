@@ -33,7 +33,7 @@ tasks:
 # Download default CFX resources
   - action: download_github
     src: https://github.com/Madruga01-DEV/cfx-server-data
-    ref: master
+    ref: main
     subpath: resources
     dest: ./resources/
   - action: remove_path
