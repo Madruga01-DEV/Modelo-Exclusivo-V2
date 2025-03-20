@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/Madruga01-DEV/Modelo-Exclusivo-V2/main/mdg_base.yaml
