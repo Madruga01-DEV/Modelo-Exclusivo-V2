@@ -1,20 +1,4 @@
--- --------------------------------------------------------
--- Servidor:                     127.0.0.1
--- Versão do servidor:           10.4.28-MariaDB - mariadb.org binary distribution
--- OS do Servidor:               Win64
--- HeidiSQL Versão:              12.6.0.6796
--- --------------------------------------------------------
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
--- Copiando estrutura para tabela baseexclusivav2.bank_users
 CREATE TABLE IF NOT EXISTS `bank_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -30,9 +14,6 @@ CREATE TABLE IF NOT EXISTS `bank_users` (
   CONSTRAINT `bankusers` FOREIGN KEY (`identifier`) REFERENCES `users` (`identifier`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.bank_users: ~0 rows (aproximadamente)
-
--- Copiando estrutura para tabela baseexclusivav2.banneds
 CREATE TABLE IF NOT EXISTS `banneds` (
   `b_id` int(11) NOT NULL AUTO_INCREMENT,
   `b_steam` varchar(100) NOT NULL,
@@ -45,9 +26,6 @@ CREATE TABLE IF NOT EXISTS `banneds` (
   PRIMARY KEY (`b_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Copiando dados para a tabela baseexclusivav2.banneds: ~0 rows (aproximadamente)
-
--- Copiando estrutura para tabela baseexclusivav2.bills
 CREATE TABLE IF NOT EXISTS `bills` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `job` longtext DEFAULT NULL,
@@ -60,9 +38,7 @@ CREATE TABLE IF NOT EXISTS `bills` (
   UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.bills: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.birds
 CREATE TABLE IF NOT EXISTS `birds` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(60) NOT NULL,
@@ -75,9 +51,6 @@ CREATE TABLE IF NOT EXISTS `birds` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.birds: ~0 rows (aproximadamente)
-
--- Copiando estrutura para tabela baseexclusivav2.boats
 CREATE TABLE IF NOT EXISTS `boats` (
   `identifier` varchar(50) NOT NULL,
   `charid` int(11) NOT NULL,
@@ -86,9 +59,7 @@ CREATE TABLE IF NOT EXISTS `boats` (
   `location` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.boats: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.bounty
 CREATE TABLE IF NOT EXISTS `bounty` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` longtext DEFAULT '',
@@ -98,9 +69,7 @@ CREATE TABLE IF NOT EXISTS `bounty` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.bounty: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.bountyboard
 CREATE TABLE IF NOT EXISTS `bountyboard` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` longtext DEFAULT '',
@@ -108,18 +77,14 @@ CREATE TABLE IF NOT EXISTS `bountyboard` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.bountyboard: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.bulgar_madamnazar_market
 CREATE TABLE IF NOT EXISTS `bulgar_madamnazar_market` (
   `charid` int(11) DEFAULT NULL,
   `identifier` varchar(100) NOT NULL,
   `bulgar_madamnazar_market` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela baseexclusivav2.bulgar_madamnazar_market: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.camping
 CREATE TABLE IF NOT EXISTS `camping` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `center` longtext DEFAULT '{}',
@@ -136,9 +101,7 @@ CREATE TABLE IF NOT EXISTS `camping` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.camping: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.cartaz
 CREATE TABLE IF NOT EXISTS `cartaz` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
@@ -149,9 +112,7 @@ CREATE TABLE IF NOT EXISTS `cartaz` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.cartaz: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.characters
 CREATE TABLE IF NOT EXISTS `characters` (
   `identifier` varchar(50) NOT NULL DEFAULT '',
   `steamname` varchar(50) NOT NULL DEFAULT '',
@@ -209,9 +170,7 @@ CREATE TABLE IF NOT EXISTS `characters` (
   CONSTRAINT `FK_characters_users` FOREIGN KEY (`identifier`) REFERENCES `users` (`identifier`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
 
--- Copiando dados para a tabela baseexclusivav2.characters: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.character_inventories
 CREATE TABLE IF NOT EXISTS `character_inventories` (
   `character_id` int(11) DEFAULT NULL,
   `inventory_type` varchar(100) NOT NULL DEFAULT 'default',
@@ -222,9 +181,7 @@ CREATE TABLE IF NOT EXISTS `character_inventories` (
   KEY `character_inventory_idx` (`character_id`,`inventory_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.character_inventories: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.clothes_bought
 CREATE TABLE IF NOT EXISTS `clothes_bought` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(100) NOT NULL,
@@ -242,9 +199,7 @@ CREATE TABLE IF NOT EXISTS `clothes_bought` (
   KEY `identifier` (`identifier`,`charid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.clothes_bought: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.communityservice
 CREATE TABLE IF NOT EXISTS `communityservice` (
   `identifier` varchar(100) NOT NULL DEFAULT '0',
   `name` varchar(100) NOT NULL DEFAULT '0',
@@ -253,9 +208,7 @@ CREATE TABLE IF NOT EXISTS `communityservice` (
   `servicecount` varchar(100) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=DYNAMIC;
 
--- Copiando dados para a tabela baseexclusivav2.communityservice: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.companions
 CREATE TABLE IF NOT EXISTS `companions` (
   `identifier` varchar(40) NOT NULL,
   `charidentifier` int(11) NOT NULL DEFAULT 0,
@@ -264,9 +217,7 @@ CREATE TABLE IF NOT EXISTS `companions` (
   `xp` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.companions: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.container
 CREATE TABLE IF NOT EXISTS `container` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` longtext DEFAULT NULL,
@@ -276,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `container` (
   UNIQUE KEY `ID` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.container: ~85 rows (aproximadamente)
+
 INSERT IGNORE INTO `container` (`id`, `name`, `items`, `invslots`) VALUES
 	(1, 'police', '[]', 5000),
 	(2, 'miner', '[]', 5000),
@@ -364,16 +315,14 @@ INSERT IGNORE INTO `container` (`id`, `name`, `items`, `invslots`) VALUES
 	(84, 'TabacariaBW', '[]', 5000),
 	(85, 'aaaaa', '{}', 0);
 
--- Copiando estrutura para tabela baseexclusivav2.craft
+
 CREATE TABLE IF NOT EXISTS `craft` (
   `identifier` varchar(500) NOT NULL,
   `charidentifier` varchar(50) NOT NULL,
   `profession` longtext NOT NULL DEFAULT '{}'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.craft: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.diseases
 CREATE TABLE IF NOT EXISTS `diseases` (
   `charid` int(11) NOT NULL,
   `diseases` longtext DEFAULT '{}',
@@ -381,9 +330,7 @@ CREATE TABLE IF NOT EXISTS `diseases` (
   CONSTRAINT `charid_fk` FOREIGN KEY (`charid`) REFERENCES `characters` (`charidentifier`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.diseases: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.doors
 CREATE TABLE IF NOT EXISTS `doors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `doorinfo` longtext NOT NULL DEFAULT '[]',
@@ -394,9 +341,7 @@ CREATE TABLE IF NOT EXISTS `doors` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.doors: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.farming
 CREATE TABLE IF NOT EXISTS `farming` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `steam` varchar(500) NOT NULL,
@@ -408,9 +353,6 @@ CREATE TABLE IF NOT EXISTS `farming` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.farming: ~0 rows (aproximadamente)
-
--- Copiando estrutura para tabela baseexclusivav2.farmingdata
 CREATE TABLE IF NOT EXISTS `farmingdata` (
   `job` varchar(255) DEFAULT NULL,
   `blipSprite` varchar(255) DEFAULT NULL,
@@ -419,9 +361,7 @@ CREATE TABLE IF NOT EXISTS `farmingdata` (
   `protect` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.farmingdata: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.farmingdatafree
 CREATE TABLE IF NOT EXISTS `farmingdatafree` (
   `blipSprite` varchar(255) DEFAULT NULL,
   `coords` longtext DEFAULT '{}',
@@ -429,9 +369,7 @@ CREATE TABLE IF NOT EXISTS `farmingdatafree` (
   `protect` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.farmingdatafree: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.herbalists
 CREATE TABLE IF NOT EXISTS `herbalists` (
   `identifier` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `charidentifier` int(11) NOT NULL,
@@ -440,9 +378,7 @@ CREATE TABLE IF NOT EXISTS `herbalists` (
   UNIQUE KEY `identifier_charidentifier` (`identifier`,`charidentifier`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Copiando dados para a tabela baseexclusivav2.herbalists: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.horses
 CREATE TABLE IF NOT EXISTS `horses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(40) NOT NULL,
@@ -473,9 +409,7 @@ CREATE TABLE IF NOT EXISTS `horses` (
   KEY `model` (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.horses: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.horsesstore
 CREATE TABLE IF NOT EXISTS `horsesstore` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `model` varchar(50) NOT NULL,
@@ -497,9 +431,7 @@ CREATE TABLE IF NOT EXISTS `horsesstore` (
   KEY `model` (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.horsesstore: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.horsestrainers
 CREATE TABLE IF NOT EXISTS `horsestrainers` (
   `steam` varchar(600) DEFAULT NULL,
   `charidentifier` varchar(255) DEFAULT NULL,
@@ -507,9 +439,7 @@ CREATE TABLE IF NOT EXISTS `horsestrainers` (
   `name` varchar(600) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.horsestrainers: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.horses_breeding
 CREATE TABLE IF NOT EXISTS `horses_breeding` (
   `identifier` varchar(255) NOT NULL,
   `charid` varchar(255) NOT NULL,
@@ -527,9 +457,7 @@ CREATE TABLE IF NOT EXISTS `horses_breeding` (
   `breeding_comp_horse_2` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.horses_breeding: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.horse_complements
 CREATE TABLE IF NOT EXISTS `horse_complements` (
   `identifier` varchar(50) NOT NULL,
   `charidentifier` int(11) NOT NULL,
@@ -537,19 +465,17 @@ CREATE TABLE IF NOT EXISTS `horse_complements` (
   UNIQUE KEY `identifier` (`identifier`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Copiando dados para a tabela baseexclusivav2.horse_complements: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.hospital
 CREATE TABLE IF NOT EXISTS `hospital` (
   `hospital` varchar(50) NOT NULL,
   PRIMARY KEY (`hospital`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.hospital: ~1 rows (aproximadamente)
+
 INSERT IGNORE INTO `hospital` (`hospital`) VALUES
 	('Saint Denis Hospital');
 
--- Copiando estrutura para tabela baseexclusivav2.hospital_notes
+
 CREATE TABLE IF NOT EXISTS `hospital_notes` (
   `note_id` int(11) NOT NULL AUTO_INCREMENT,
   `hospital` varchar(50) NOT NULL DEFAULT '',
@@ -562,9 +488,7 @@ CREATE TABLE IF NOT EXISTS `hospital_notes` (
   CONSTRAINT `hospital` FOREIGN KEY (`hospital`) REFERENCES `hospital` (`hospital`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.hospital_notes: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.housing
 CREATE TABLE IF NOT EXISTS `housing` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) DEFAULT NULL,
@@ -575,9 +499,7 @@ CREATE TABLE IF NOT EXISTS `housing` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Copiando dados para a tabela baseexclusivav2.housing: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.injured
 CREATE TABLE IF NOT EXISTS `injured` (
   `identifier` varchar(50) NOT NULL DEFAULT '',
   `charidentifier` int(11) DEFAULT NULL,
@@ -585,9 +507,7 @@ CREATE TABLE IF NOT EXISTS `injured` (
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela baseexclusivav2.injured: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.items
 CREATE TABLE IF NOT EXISTS `items` (
   `item` varchar(50) NOT NULL,
   `label` varchar(50) NOT NULL,
@@ -607,7 +527,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   CONSTRAINT `metadata` CHECK (json_valid(`metadata`))
 ) ENGINE=InnoDB AUTO_INCREMENT=215858 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Copiando dados para a tabela baseexclusivav2.items: ~1.775 rows (aproximadamente)
+
 INSERT IGNORE INTO `items` (`item`, `label`, `limit`, `can_remove`, `type`, `usable`, `id`, `groupId`, `metadata`, `desc`, `weight`) VALUES
 	('absinthe', 'Absinto', 100, 1, 'item_standard', 1, 1600, 1, '{}', '', 0.25),
 	('accessories', 'Accessories', 20, 1, 'item_standard', 1, 17605, 1, '{}', 'nice item', 0.25),
@@ -2385,7 +2305,6 @@ INSERT IGNORE INTO `items` (`item`, `label`, `limit`, `can_remove`, `type`, `usa
 	('Yarrow_Seed', 'semente de milefólio', 100, 1, 'item_standard', 1, 337, 1, '{}', 'Seeds to grow Yarrow plants.', 0.25),
 	('yuccaleaf', 'Yucca Leaf', 50, 1, 'item_standard', 1, 17689, 1, '{}', 'an item', 0.25);
 
--- Copiando estrutura para tabela baseexclusivav2.items_crafted
 CREATE TABLE IF NOT EXISTS `items_crafted` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `character_id` int(11) NOT NULL,
@@ -2398,20 +2317,18 @@ CREATE TABLE IF NOT EXISTS `items_crafted` (
   KEY `crafted_item_idx` (`character_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.items_crafted: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.item_group
 CREATE TABLE IF NOT EXISTS `item_group` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL COMMENT 'Description of Item Group',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.item_group: ~1 rows (aproximadamente)
+
 INSERT IGNORE INTO `item_group` (`id`, `description`) VALUES
 	(1, 'default');
 
--- Copiando estrutura para tabela baseexclusivav2.jail
+
 CREATE TABLE IF NOT EXISTS `jail` (
   `identifier` varchar(100) NOT NULL DEFAULT '0',
   `name` varchar(100) NOT NULL DEFAULT '0',
@@ -2421,9 +2338,7 @@ CREATE TABLE IF NOT EXISTS `jail` (
   `jaillocation` varchar(100) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=DYNAMIC;
 
--- Copiando dados para a tabela baseexclusivav2.jail: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.jaildata
 CREATE TABLE IF NOT EXISTS `jaildata` (
   `identifier` varchar(600) NOT NULL DEFAULT '0',
   `charid` varchar(100) NOT NULL DEFAULT '0',
@@ -2434,9 +2349,7 @@ CREATE TABLE IF NOT EXISTS `jaildata` (
   `escape` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.jaildata: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.jailwork
 CREATE TABLE IF NOT EXISTS `jailwork` (
   `identifier` varchar(600) NOT NULL DEFAULT '0',
   `charid` varchar(100) NOT NULL DEFAULT '0',
@@ -2445,9 +2358,7 @@ CREATE TABLE IF NOT EXISTS `jailwork` (
   `workTime` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.jailwork: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.loadout
 CREATE TABLE IF NOT EXISTS `loadout` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
@@ -2472,9 +2383,7 @@ CREATE TABLE IF NOT EXISTS `loadout` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.loadout: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mail
 CREATE TABLE IF NOT EXISTS `mail` (
   `address` int(11) NOT NULL AUTO_INCREMENT,
   `charidentifier` int(11) DEFAULT NULL,
@@ -2491,7 +2400,6 @@ INSERT IGNORE INTO `mail` (`address`, `charidentifier`) VALUES
 	(6, 6),
 	(7, 7);
 
--- Copiando estrutura para tabela baseexclusivav2.mailboxes
 CREATE TABLE IF NOT EXISTS `mailboxes` (
   `char_identifier` varchar(255) DEFAULT NULL,
   `mailbox_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2500,9 +2408,7 @@ CREATE TABLE IF NOT EXISTS `mailboxes` (
   PRIMARY KEY (`mailbox_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mailboxes: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mailbox_mails
 CREATE TABLE IF NOT EXISTS `mailbox_mails` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sender_id` varchar(50) DEFAULT NULL,
@@ -2517,9 +2423,7 @@ CREATE TABLE IF NOT EXISTS `mailbox_mails` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mailbox_mails: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mailbox_messages
 CREATE TABLE IF NOT EXISTS `mailbox_messages` (
   `from_char` varchar(255) DEFAULT NULL,
   `to_char` varchar(255) DEFAULT NULL,
@@ -2532,9 +2436,7 @@ CREATE TABLE IF NOT EXISTS `mailbox_messages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mailbox_messages: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mails
 CREATE TABLE IF NOT EXISTS `mails` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `anon` tinyint(1) DEFAULT NULL,
@@ -2552,9 +2454,7 @@ CREATE TABLE IF NOT EXISTS `mails` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mails: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mail_addressbook
 CREATE TABLE IF NOT EXISTS `mail_addressbook` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `address` int(11) DEFAULT NULL,
@@ -2566,9 +2466,7 @@ CREATE TABLE IF NOT EXISTS `mail_addressbook` (
   CONSTRAINT `mail_addressbook_ibfk_1` FOREIGN KEY (`address`) REFERENCES `mail` (`address`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mail_addressbook: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mail_editablefolders
 CREATE TABLE IF NOT EXISTS `mail_editablefolders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `address` int(11) DEFAULT NULL,
@@ -2578,9 +2476,7 @@ CREATE TABLE IF NOT EXISTS `mail_editablefolders` (
   CONSTRAINT `mail_editablefolders_ibfk_1` FOREIGN KEY (`address`) REFERENCES `mail` (`address`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mail_editablefolders: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mdg_bank
 CREATE TABLE IF NOT EXISTS `mdg_bank` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -2594,9 +2490,7 @@ CREATE TABLE IF NOT EXISTS `mdg_bank` (
   KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mdg_bank: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mdg_clothes_state
 CREATE TABLE IF NOT EXISTS `mdg_clothes_state` (
   `identifier` varchar(50) NOT NULL,
   `charid` int(11) NOT NULL,
@@ -2605,9 +2499,7 @@ CREATE TABLE IF NOT EXISTS `mdg_clothes_state` (
   PRIMARY KEY (`identifier`,`charid`,`category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mdg_clothes_state: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mdg_farming
 CREATE TABLE IF NOT EXISTS `mdg_farming` (
   `plant_id` int(40) NOT NULL AUTO_INCREMENT,
   `plant_coords` longtext NOT NULL,
@@ -2619,9 +2511,7 @@ CREATE TABLE IF NOT EXISTS `mdg_farming` (
   PRIMARY KEY (`plant_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mdg_farming: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mdg_horses
 CREATE TABLE IF NOT EXISTS `mdg_horses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) NOT NULL,
@@ -2641,9 +2531,7 @@ CREATE TABLE IF NOT EXISTS `mdg_horses` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mdg_horses: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mdg_horses_stats
 CREATE TABLE IF NOT EXISTS `mdg_horses_stats` (
   `horseid` int(11) NOT NULL,
   `distance` int(11) NOT NULL DEFAULT 0,
@@ -2657,27 +2545,21 @@ CREATE TABLE IF NOT EXISTS `mdg_horses_stats` (
   PRIMARY KEY (`horseid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mdg_horses_stats: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mdg_ident
 CREATE TABLE IF NOT EXISTS `mdg_ident` (
   `steam` varchar(255) DEFAULT NULL,
   `charid` varchar(50) DEFAULT NULL,
   `data` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mdg_ident: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mdg_madame_nazar
 CREATE TABLE IF NOT EXISTS `mdg_madame_nazar` (
   `charid` int(11) DEFAULT NULL,
   `identifier` varchar(100) DEFAULT NULL,
   `mdg_madame_nazar` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mdg_madame_nazar: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mdg_outfits
 CREATE TABLE IF NOT EXISTS `mdg_outfits` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(100) NOT NULL,
@@ -2688,9 +2570,7 @@ CREATE TABLE IF NOT EXISTS `mdg_outfits` (
   KEY `identifier` (`identifier`,`charid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mdg_outfits: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mdg_stable_bought
 CREATE TABLE IF NOT EXISTS `mdg_stable_bought` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) NOT NULL,
@@ -2702,9 +2582,7 @@ CREATE TABLE IF NOT EXISTS `mdg_stable_bought` (
   KEY `identifier` (`identifier`,`charid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mdg_stable_bought: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mdg_stable_color
 CREATE TABLE IF NOT EXISTS `mdg_stable_color` (
   `id` int(11) NOT NULL,
   `drawable` int(11) DEFAULT NULL,
@@ -2718,9 +2596,7 @@ CREATE TABLE IF NOT EXISTS `mdg_stable_color` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mdg_stable_color: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mdg_vip
 CREATE TABLE IF NOT EXISTS `mdg_vip` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` text DEFAULT NULL,
@@ -2731,9 +2607,7 @@ CREATE TABLE IF NOT EXISTS `mdg_vip` (
   UNIQUE KEY `charid` (`charid`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mdg_vip: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mdg_wagons
 CREATE TABLE IF NOT EXISTS `mdg_wagons` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) NOT NULL,
@@ -2750,9 +2624,7 @@ CREATE TABLE IF NOT EXISTS `mdg_wagons` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mdg_wagons: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.mms_huntingid
 CREATE TABLE IF NOT EXISTS `mms_huntingid` (
   `identifier` varchar(50) DEFAULT NULL,
   `firstname` varchar(50) DEFAULT NULL,
@@ -2763,9 +2635,7 @@ CREATE TABLE IF NOT EXISTS `mms_huntingid` (
   `days` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.mms_huntingid: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.moonshiner
 CREATE TABLE IF NOT EXISTS `moonshiner` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `object` text NOT NULL DEFAULT '',
@@ -2776,9 +2646,7 @@ CREATE TABLE IF NOT EXISTS `moonshiner` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.moonshiner: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.moonshiner_plants
 CREATE TABLE IF NOT EXISTS `moonshiner_plants` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `object` text NOT NULL DEFAULT '',
@@ -2789,16 +2657,12 @@ CREATE TABLE IF NOT EXISTS `moonshiner_plants` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.moonshiner_plants: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.newspaper
 CREATE TABLE IF NOT EXISTS `newspaper` (
   `news` longtext DEFAULT '[]'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.newspaper: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.notepad
 CREATE TABLE IF NOT EXISTS `notepad` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `charidentifier` int(11) NOT NULL,
@@ -2807,9 +2671,7 @@ CREATE TABLE IF NOT EXISTS `notepad` (
   KEY `charidentifier` (`charidentifier`)
 ) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela baseexclusivav2.notepad: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.oil
 CREATE TABLE IF NOT EXISTS `oil` (
   `identifier` varchar(50) NOT NULL,
   `charidentifier` int(11) NOT NULL,
@@ -2820,9 +2682,7 @@ CREATE TABLE IF NOT EXISTS `oil` (
   UNIQUE KEY `charidentifier` (`charidentifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.oil: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.outfits
 CREATE TABLE IF NOT EXISTS `outfits` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(45) NOT NULL,
@@ -2832,18 +2692,14 @@ CREATE TABLE IF NOT EXISTS `outfits` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Copiando dados para a tabela baseexclusivav2.outfits: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.outfitter
 CREATE TABLE IF NOT EXISTS `outfitter` (
   `identifier` varchar(50) DEFAULT NULL,
   `charidentifier` int(11) DEFAULT NULL,
   `props` longtext DEFAULT '[]'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.outfitter: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.pets
 CREATE TABLE IF NOT EXISTS `pets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(500) DEFAULT NULL,
@@ -2856,32 +2712,30 @@ CREATE TABLE IF NOT EXISTS `pets` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela baseexclusivav2.pets: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.playerfarms
 CREATE TABLE IF NOT EXISTS `playerfarms` (
   `charid` int(11) NOT NULL,
   `farm` longtext NOT NULL DEFAULT '[]',
   PRIMARY KEY (`charid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.playerfarms: ~2 rows (aproximadamente)
+
 INSERT IGNORE INTO `playerfarms` (`charid`, `farm`) VALUES
 	(1, '1'),
 	(2, '1');
 
--- Copiando estrutura para tabela baseexclusivav2.playerfarmsdex
+
 CREATE TABLE IF NOT EXISTS `playerfarmsdex` (
   `dex` longtext DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.playerfarmsdex: ~3 rows (aproximadamente)
+
 INSERT IGNORE INTO `playerfarmsdex` (`dex`) VALUES
 	('0'),
 	('0'),
 	('0');
 
--- Copiando estrutura para tabela baseexclusivav2.playerhousing
+
 CREATE TABLE IF NOT EXISTS `playerhousing` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` int(11) NOT NULL DEFAULT 0,
@@ -2911,7 +2765,7 @@ CREATE TABLE IF NOT EXISTS `playerhousing` (
   KEY `primarydoor` (`primarydoor`(768))
 ) ENGINE=InnoDB AUTO_INCREMENT=178 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.playerhousing: ~106 rows (aproximadamente)
+
 INSERT IGNORE INTO `playerhousing` (`id`, `type`, `primarydoor`, `otherdoors`, `range`, `owned`, `selleridentifier`, `sellercharidentifier`, `ledger`, `tax`, `repoed`, `invspace`, `upgrade`, `keyholders`, `changingroom`, `inventorylocation`, `items`, `furniture`, `price`, `buyeridentifier`, `buyercharidentifier`, `motel`, `taxledger`) VALUES
 	(56, 3, '[{"y":-2364.12890625,"z":62.64009475708008,"x":-2354.70947265625}]', '[]', 30, 0, 'steam:11000013527d62e', 0, 0, 250, 0, 500, 0, '[]', '[]', '[]', '[]', '[]', 10000, '0', 0, '0', 0),
 	(57, 3, '[{"y":-2375.883056640625,"z":62.5806655883789,"x":-2342.733642578125}]', '[]', 30, 0, 'steam:11000013527d62e', 0, 0, 250, 0, 500, 0, '[]', '[]', '[]', '[]', '[]', 10000, '0', 0, '0', 0),
@@ -3020,7 +2874,7 @@ INSERT IGNORE INTO `playerhousing` (`id`, `type`, `primarydoor`, `otherdoors`, `
 	(173, 3, '[{"y":-7421.79150390625,"z":178.41554260253907,"x":656.319091796875}]', '[]', 50, 0, 'steam:11000013527d62e', 0, 0, 800, 0, 5000, 0, '[]', '[]', '[]', '[]', '[]', 35000, '0', 0, '0', 0),
 	(177, 0, '[{"objYaw1":0.00235201278701,"q":46.62643814086914,"p":-141.64300537109376,"objYaw3":-139.03125,"entit":1194242,"o":2237.07470703125,"objYaw2":0.00180673645809,"objc":1762076266,"doorname":"p_door41x","locked":true,"x":2237.07470703125,"y":-141.64300537109376,"doorhash":-2080420985,"z":46.62643814086914}]', '[]', 100, 0, 'steam:11000013527d62e', 22, 0, 0, 0, 500, 0, '[]', '[]', '[]', '[{"name":"trigo","group":1,"metadata":[],"label":"trigo","type":"item_standard","count":1,"limit":100}]', '[]', 1000, '0', 0, '0', 0);
 
--- Copiando estrutura para tabela baseexclusivav2.playerhousing_sold_home_ledger
+
 CREATE TABLE IF NOT EXISTS `playerhousing_sold_home_ledger` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) DEFAULT NULL,
@@ -3029,9 +2883,7 @@ CREATE TABLE IF NOT EXISTS `playerhousing_sold_home_ledger` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.playerhousing_sold_home_ledger: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.playershops
 CREATE TABLE IF NOT EXISTS `playershops` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) NOT NULL DEFAULT '0',
@@ -3055,9 +2907,7 @@ CREATE TABLE IF NOT EXISTS `playershops` (
   KEY `weapons` (`weapons`(768))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.playershops: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.player_ranch
 CREATE TABLE IF NOT EXISTS `player_ranch` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) DEFAULT NULL,
@@ -3088,7 +2938,7 @@ CREATE TABLE IF NOT EXISTS `player_ranch` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.player_ranch: ~50 rows (aproximadamente)
+
 INSERT IGNORE INTO `player_ranch` (`id`, `identifier`, `charidentifier`, `name`, `price`, `coords`, `owned`, `herdtrail`, `cattle`, `q_cattle`, `dist`, `chores`, `cows`, `chickens`, `milk`, `eggs`, `ledger`, `dog`, `q_ranch`, `repoed`, `herding`, `selling`, `milking`, `checking`, `tax`, `hired`) VALUES
 	(6, NULL, NULL, 'Fazenda 4', 300000, '{"x":2244.526611328125,"y":-149.67286682128907,"z":46.5038948059082}', 0, '[]', '[]', '[]', NULL, '[]', '[]', '[]', 0, 0, 0, '0', 0, 0, 0, 0, 0, 0, 450, '[]'),
 	(7, NULL, NULL, 'Fazenda 5', 350000, '{"x":2958.015869140625,"y":800.7172241210938,"z":51.40822219848633}', 0, '[]', '[]', '[]', NULL, '[]', '[]', '[]', 0, 0, 0, '0', 0, 0, 0, 0, 0, 0, 450, '[]'),
@@ -3141,7 +2991,6 @@ INSERT IGNORE INTO `player_ranch` (`id`, `identifier`, `charidentifier`, `name`,
 	(55, NULL, NULL, 'Fazenda 53', 150000, '{"x":203.3406524658203,"y":985.8958740234375,"z":190.27862548828126}', 0, '[]', '[]', '[]', NULL, '[]', '[]', '[]', 0, 0, 0, '0', 0, 0, 0, 0, 0, 0, 1000, '[]'),
 	(57, NULL, NULL, 'Fazenda 54', 100000, '{"x":793.2129516601563,"y":872.043212890625,"z":119.51619720458985}', 0, '[]', '[]', '[]', NULL, '[]', '[]', '[]', 0, 0, 0, '0', 0, 0, 0, 0, 0, 0, 450, '[]');
 
--- Copiando estrutura para tabela baseexclusivav2.player_trains
 CREATE TABLE IF NOT EXISTS `player_trains` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL DEFAULT '0',
@@ -3159,9 +3008,7 @@ CREATE TABLE IF NOT EXISTS `player_trains` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.player_trains: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.player_transformations
 CREATE TABLE IF NOT EXISTS `player_transformations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) NOT NULL,
@@ -3171,9 +3018,7 @@ CREATE TABLE IF NOT EXISTS `player_transformations` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.player_transformations: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.posters
 CREATE TABLE IF NOT EXISTS `posters` (
   `poster_link` varchar(255) DEFAULT NULL,
   `city` varchar(255) DEFAULT '',
@@ -3182,9 +3027,7 @@ CREATE TABLE IF NOT EXISTS `posters` (
   KEY `poster_link` (`poster_link`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.posters: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.ranch
 CREATE TABLE IF NOT EXISTS `ranch` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `steam` varchar(100) DEFAULT NULL,
@@ -3206,36 +3049,34 @@ CREATE TABLE IF NOT EXISTS `ranch` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=DYNAMIC;
 
--- Copiando dados para a tabela baseexclusivav2.ranch: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.real_logic_horses
 CREATE TABLE IF NOT EXISTS `real_logic_horses` (
   `update_time` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.real_logic_horses: ~1 rows (aproximadamente)
+
 INSERT IGNORE INTO `real_logic_horses` (`update_time`) VALUES
 	(0);
 
--- Copiando estrutura para tabela baseexclusivav2.real_logic_pets
+
 CREATE TABLE IF NOT EXISTS `real_logic_pets` (
   `update_time` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.real_logic_pets: ~1 rows (aproximadamente)
+
 INSERT IGNORE INTO `real_logic_pets` (`update_time`) VALUES
 	(66);
 
--- Copiando estrutura para tabela baseexclusivav2.real_logic_ranch
+
 CREATE TABLE IF NOT EXISTS `real_logic_ranch` (
   `update_time` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.real_logic_ranch: ~1 rows (aproximadamente)
+
 INSERT IGNORE INTO `real_logic_ranch` (`update_time`) VALUES
 	(0);
 
--- Copiando estrutura para tabela baseexclusivav2.ricx_waterpumps
+
 CREATE TABLE IF NOT EXISTS `ricx_waterpumps` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `id2` int(10) NOT NULL,
@@ -3246,17 +3087,13 @@ CREATE TABLE IF NOT EXISTS `ricx_waterpumps` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.ricx_waterpumps: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.robbery
 CREATE TABLE IF NOT EXISTS `robbery` (
   `name_robbery` varchar(50) DEFAULT '0',
   `time_robbery` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.robbery: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.rooms
 CREATE TABLE IF NOT EXISTS `rooms` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `interiorId` int(11) NOT NULL,
@@ -3266,9 +3103,7 @@ CREATE TABLE IF NOT EXISTS `rooms` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
--- Copiando dados para a tabela baseexclusivav2.rooms: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.societa
 CREATE TABLE IF NOT EXISTS `societa` (
   `id` int(1) NOT NULL AUTO_INCREMENT,
   `nomesocieta` longtext NOT NULL,
@@ -3286,16 +3121,14 @@ CREATE TABLE IF NOT EXISTS `societa` (
   KEY `nomesocieta` (`nomesocieta`(768))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.societa: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.society
 CREATE TABLE IF NOT EXISTS `society` (
   `job` longtext DEFAULT NULL,
   `jobgrade` int(11) DEFAULT NULL,
   `salary` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.society: ~21 rows (aproximadamente)
+
 INSERT IGNORE INTO `society` (`job`, `jobgrade`, `salary`) VALUES
 	('police', 0, 0),
 	('police', 1, 0),
@@ -3319,13 +3152,13 @@ INSERT IGNORE INTO `society` (`job`, `jobgrade`, `salary`) VALUES
 	('horsetrainer', 3, 0),
 	('horsetrainer', 4, 0);
 
--- Copiando estrutura para tabela baseexclusivav2.society_ledger
+
 CREATE TABLE IF NOT EXISTS `society_ledger` (
   `job` longtext DEFAULT NULL,
   `ledger` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.society_ledger: ~86 rows (aproximadamente)
+
 INSERT IGNORE INTO `society_ledger` (`job`, `ledger`) VALUES
 	('Fazenda08', 0),
 	('doctor', 0),
@@ -3414,7 +3247,7 @@ INSERT IGNORE INTO `society_ledger` (`job`, `ledger`) VALUES
 	('police', 0),
 	('police', 0);
 
--- Copiando estrutura para tabela baseexclusivav2.society_shops
+
 CREATE TABLE IF NOT EXISTS `society_shops` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `society` varchar(50) NOT NULL DEFAULT '0',
@@ -3426,9 +3259,7 @@ CREATE TABLE IF NOT EXISTS `society_shops` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.society_shops: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.stables
 CREATE TABLE IF NOT EXISTS `stables` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) NOT NULL,
@@ -3445,9 +3276,7 @@ CREATE TABLE IF NOT EXISTS `stables` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Copiando dados para a tabela baseexclusivav2.stables: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.stagecoaches
 CREATE TABLE IF NOT EXISTS `stagecoaches` (
   `identifier` varchar(40) NOT NULL,
   `charid` int(11) NOT NULL,
@@ -3455,9 +3284,7 @@ CREATE TABLE IF NOT EXISTS `stagecoaches` (
   `stagecoach` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.stagecoaches: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.storelimits
 CREATE TABLE IF NOT EXISTS `storelimits` (
   `store` varchar(255) DEFAULT NULL,
   `count` varchar(255) DEFAULT NULL,
@@ -3465,15 +3292,13 @@ CREATE TABLE IF NOT EXISTS `storelimits` (
   KEY `store` (`store`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.storelimits: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.stores
 CREATE TABLE IF NOT EXISTS `stores` (
   `city_name` varchar(50) DEFAULT NULL,
   `tax_for_price` varchar(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.stores: ~10 rows (aproximadamente)
+
 INSERT IGNORE INTO `stores` (`city_name`, `tax_for_price`) VALUES
 	('Valentine store', '10.0'),
 	('Blackwater store', '10.0'),
@@ -3486,7 +3311,6 @@ INSERT IGNORE INTO `stores` (`city_name`, `tax_for_price`) VALUES
 	('Valentine_Store', '100'),
 	('Sell_Ecology_Spot', '100');
 
--- Copiando estrutura para tabela baseexclusivav2.storesplayer
 CREATE TABLE IF NOT EXISTS `storesplayer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -3501,9 +3325,7 @@ CREATE TABLE IF NOT EXISTS `storesplayer` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.storesplayer: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.telegrams
 CREATE TABLE IF NOT EXISTS `telegrams` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `recipient` varchar(255) NOT NULL,
@@ -3516,9 +3338,7 @@ CREATE TABLE IF NOT EXISTS `telegrams` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela baseexclusivav2.telegrams: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.undead
 CREATE TABLE IF NOT EXISTS `undead` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) NOT NULL,
@@ -3527,9 +3347,7 @@ CREATE TABLE IF NOT EXISTS `undead` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.undead: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.underground
 CREATE TABLE IF NOT EXISTS `underground` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) DEFAULT NULL,
@@ -3558,9 +3376,7 @@ CREATE TABLE IF NOT EXISTS `underground` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.underground: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.underground_animals
 CREATE TABLE IF NOT EXISTS `underground_animals` (
   `ranchid` int(11) NOT NULL,
   `animalid` int(11) NOT NULL,
@@ -3581,9 +3397,7 @@ CREATE TABLE IF NOT EXISTS `underground_animals` (
   PRIMARY KEY (`ranchid`,`animalid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela baseexclusivav2.underground_animals: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.underground_employees
 CREATE TABLE IF NOT EXISTS `underground_employees` (
   `ranchid` int(11) NOT NULL,
   `position` varchar(255) NOT NULL,
@@ -3594,9 +3408,7 @@ CREATE TABLE IF NOT EXISTS `underground_employees` (
   PRIMARY KEY (`ranchid`,`position`,`steamid`,`charid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela baseexclusivav2.underground_employees: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.underground_objects
 CREATE TABLE IF NOT EXISTS `underground_objects` (
   `ranchid` int(11) NOT NULL,
   `x` int(11) NOT NULL,
@@ -3614,9 +3426,7 @@ CREATE TABLE IF NOT EXISTS `underground_objects` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela baseexclusivav2.underground_objects: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.underground_ranches
 CREATE TABLE IF NOT EXISTS `underground_ranches` (
   `ranchid` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -3625,9 +3435,7 @@ CREATE TABLE IF NOT EXISTS `underground_ranches` (
   PRIMARY KEY (`ranchid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Copiando dados para a tabela baseexclusivav2.underground_ranches: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.users
 CREATE TABLE IF NOT EXISTS `users` (
   `identifier` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `group` varchar(50) DEFAULT 'user',
@@ -3639,9 +3447,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `identifier` (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.users: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.user_jobs
 CREATE TABLE IF NOT EXISTS `user_jobs` (
   `user_id` int(11) NOT NULL,
   `job` varchar(50) DEFAULT NULL,
@@ -3651,9 +3457,7 @@ CREATE TABLE IF NOT EXISTS `user_jobs` (
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.user_jobs: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.wagons
 CREATE TABLE IF NOT EXISTS `wagons` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(40) NOT NULL,
@@ -3684,9 +3488,7 @@ CREATE TABLE IF NOT EXISTS `wagons` (
   KEY `model` (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.wagons: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.wagon_water
 CREATE TABLE IF NOT EXISTS `wagon_water` (
   `identifier` varchar(255) DEFAULT '0',
   `charid` varchar(255) DEFAULT '0',
@@ -3695,9 +3497,7 @@ CREATE TABLE IF NOT EXISTS `wagon_water` (
   `wagon_name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
 
--- Copiando dados para a tabela baseexclusivav2.wagon_water: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.whitelist
 CREATE TABLE IF NOT EXISTS `whitelist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
@@ -3708,9 +3508,7 @@ CREATE TABLE IF NOT EXISTS `whitelist` (
   CONSTRAINT `FK_characters_whitelist` FOREIGN KEY (`identifier`) REFERENCES `users` (`identifier`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
--- Copiando dados para a tabela baseexclusivav2.whitelist: ~0 rows (aproximadamente)
 
--- Copiando estrutura para tabela baseexclusivav2.xxx_dogs
 CREATE TABLE IF NOT EXISTS `xxx_dogs` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `id2` int(6) NOT NULL DEFAULT 0,
@@ -3721,30 +3519,28 @@ CREATE TABLE IF NOT EXISTS `xxx_dogs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela baseexclusivav2.xxx_dogs: ~0 rows (aproximadamente)
 
--- Copiando estrutura para trigger baseexclusivav2.add_mdg_horses_stats
 SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='IGNORE_SPACE,NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION';
 DELIMITER //
 CREATE TRIGGER `add_mdg_horses_stats` AFTER INSERT ON `mdg_horses` FOR EACH ROW INSERT INTO mdg_horses_stats (horseid) VALUES (NEW.id)//
 DELIMITER ;
 SET SQL_MODE=@OLDTMP_SQL_MODE;
 
--- Copiando estrutura para trigger baseexclusivav2.delete_mdg_horses_stats
+
 SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='IGNORE_SPACE,NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION';
 DELIMITER //
 CREATE TRIGGER `delete_mdg_horses_stats` AFTER DELETE ON `mdg_horses` FOR EACH ROW DELETE FROM mdg_horses_stats WHERE horseid = OLD.id//
 DELIMITER ;
 SET SQL_MODE=@OLDTMP_SQL_MODE;
 
--- Copiando estrutura para trigger baseexclusivav2.delete_mdg_stable_color
+
 SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='IGNORE_SPACE,NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION';
 DELIMITER //
 CREATE TRIGGER `delete_mdg_stable_color` AFTER DELETE ON `mdg_stable_bought` FOR EACH ROW DELETE FROM `mdg_stable_color` WHERE id = OLD.id//
 DELIMITER ;
 SET SQL_MODE=@OLDTMP_SQL_MODE;
 
--- Copiando estrutura para trigger baseexclusivav2.update_mdg_stable_equiped_component
+
 SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='IGNORE_SPACE,NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION';
 DELIMITER //
 CREATE TRIGGER `update_mdg_stable_equiped_component` AFTER DELETE ON `mdg_horses` FOR EACH ROW UPDATE `mdg_stable_bought` SET equiped_on = 0 WHERE equiped_on = OLD.id//
