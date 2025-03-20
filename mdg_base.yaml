@@ -1,0 +1,190 @@
+$engine: 3
+$onesync: on
+$steamRequired: true
+name: MDG_BASES
+author: madruga_dev
+description: bases mdg 2025 o melhor para sua cidade.
+
+variables:
+    steam_webApiKey: "none"
+
+tasks:
+
+# Recipe Specific server.cfg files
+  - action: download_github
+    src: https://github.com/Madruga01-DEV/Modelo-Exclusivo-V2
+    ref: main
+    dest: ./temp/Modelo-Exclusivo-V2
+  
+  - action: move_path
+    src: ./temp/Modelo-Exclusivo-V2/server.cfg
+    dest: ./server.cfg
+  
+# Run Database SQL
+  - action: connect_database
+  - action: query_database
+    file: ./temp/Modelo-Exclusivo-V2/BaseexclusivaV2.sql
+    
+# Move the icon to the root
+  - action: move_path
+    src: ./temp/Modelo-Exclusivo-V2/icon.png
+    dest: ./icon.png
+
+# Download default CFX resources
+  - action: download_github
+    src: https://github.com/Madruga01-DEV/cfx-server-data
+    ref: master
+    subpath: resources
+    dest: ./resources/
+  - action: remove_path
+    path: ./resources/[CFX]/[gameplay]/chat
+
+# Download vorp core
+  - action: download_github
+    src: https://github.com/VORPCORE/vorp_core-lua
+    ref: main
+    dest: ./temp/[VORP]/vorp_core
+
+# Download vorp character
+  - action: download_github
+    src: https://github.com/VORPCORE/vorp_character-lua
+    ref: main
+    dest: ./temp/[VORP]/vorp_character
+
+# Download vorp inventory
+  - action: download_github
+    src: https://github.com/VORPCORE/vorp_inventory-lua
+    ref: main
+    dest: ./temp/[VORP]/vorp_inventory
+
+# Download vorp inputs
+  - action: download_github
+    src: https://github.com/VORPCORE/vorp_inputs-lua
+    ref: main
+    dest: ./temp/[VORP]/vorp_inputs
+ 
+# Download vorp progressbar
+  - action: download_github
+    src: https://github.com/VORPCORE/vorp_progressbar
+    ref: main
+    dest: ./temp/[VORP]/vorp_progressbar
+
+# Download vorp admin
+  - action: download_github
+    src: https://github.com/VORPCORE/vorp_admin
+    ref: main
+    dest: ./temp/[VORP]/vorp_admin
+
+# Download vorp zonenotify
+  - action: download_github
+    src: https://github.com/VORPCORE/vorp_zonenotify
+    ref: main
+    dest: ./temp/[VORP]/vorp_zonenotify
+
+# Download vorp animations
+  - action: download_github
+    src: https://github.com/VORPCORE/vorp_animations
+    ref: main
+    dest: ./temp/[VORP]/vorp_animations
+
+# Download vorp utils
+  - action: download_github
+    src: https://github.com/VORPCORE/vorp_utils
+    ref: main
+    dest: ./temp/[VORP]/vorp_utils
+
+# Download vorp menu
+  - action: download_github
+    src: https://github.com/VORPCORE/vorp_menu
+    ref: main
+    dest: ./temp/[VORP]/vorp_menu
+
+# Download vorp walkanim
+  - action: download_github
+    src: https://github.com/VORPCORE/vorp_walkanim
+    ref: main
+    dest: ./temp/[VORP]/vorp_walkanim
+
+# Download oxmysql
+  - action: download_file
+    path: ./tmp/files/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/files/oxmysql.zip
+
+# Download pma-voice
+  - action: download_github
+    src: https://github.com/AvarianKnight/pma-voice
+    ref: main
+    dest: ./resources/[standalone]/pma-voice
+
+# Download weathersync
+  - action: download_github
+    src: https://github.com/kibook/weathersync
+    ref: master
+    dest: ./resources/[standalone]/weathersync
+
+# Download redm ipls
+  - action: download_github
+    src: https://github.com/Madruga01-DEV/redm-ipls
+    ref: main
+    dest: ./resources/[standalone]/redm-ipls
+
+# Download syn minigame
+  - action: download_github
+    src: https://github.com/outsider31000/syn_minigame
+    ref: main
+    dest: ./resources/[standalone]/syn_minigame
+
+# Download moonshine interiors
+  - action: download_github
+    src: https://github.com/outsider31000/moonshine_interiors
+    ref: main
+    dest: ./resources/[standalone]/moonshine_interiors
+
+# Download Polyzone
+  - action: download_github
+    src: https://github.com/outsider31000/PolyZone
+    ref: main
+    dest: ./resources/[standalone]/PolyZone
+
+# Download lockpick
+  - action: download_github
+    src: https://github.com/outsider31000/lockpick
+    ref: main
+    dest: ./resources/[standalone]/lockpick
+
+# Download lockpick
+  - action: download_github
+    src: https://github.com/Madruga01-DEV/mdg_mapas
+    ref: main
+    dest: ./resources/mdg_mapas
+
+    # Download lockpick
+  - action: download_github
+    src: https://github.com/Madruga01-DEV/logo_loadscreen
+    ref: main
+    dest: ./resources/logo_loadscreen
+
+        # Download lockpick
+  - action: download_github
+    src: https://github.com/Madruga01-DEV/Dependencias
+    ref: main
+    dest: ./resources/Dependencias
+
+# Remove Old Chat
+  - action: remove_path
+    path: ./resources/[cfx-default]/[gameplay]/chat
+
+# Move all vorp resources and files to root for txadmin
+  - action: move_path
+    src: ./temp/[VORP]
+    dest: ./resources/[VORP]
+
+
+# Clean up temporary files
+  - action: remove_path
+    path: ./temp
+  - action: remove_path
+    path: ./tmp
