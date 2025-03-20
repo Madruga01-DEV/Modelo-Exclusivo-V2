@@ -53,7 +53,7 @@ tasks:
 
 # Download vorp inventory
   - action: download_github
-    src: https://github.com/VORPCORE/vorp_inventory-lua
+    src: https://github.com/Madruga01-DEV/vorp_inventory
     ref: main
     dest: ./temp/[VORP]/vorp_inventory
 
