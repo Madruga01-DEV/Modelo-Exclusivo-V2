@@ -14,12 +14,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
--- Copiando estrutura do banco de dados para baseexclusivav2
-CREATE DATABASE IF NOT EXISTS `baseexclusivav2` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
-USE `baseexclusivav2`;
-
--- Copiando estrutura para procedure baseexclusivav2.AlterTableMail
 DELIMITER //
 CREATE PROCEDURE `AlterTableMail`()
 BEGIN
